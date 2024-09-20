@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="css/style_login.css">
 </head>
 <body>
+<<<<<<< HEAD
 
 <?php
     include '../includes/database-connection.php';
@@ -41,6 +42,8 @@
     <p>Số lượng bài viết: <?php echo $count_baiviet; ?></p>
    
 </div>  -->
+=======
+>>>>>>> ebc403614ce0e0db6107934eb7e275e7b86644e0
     <header>
         <nav class="navbar navbar-expand-lg bg-body-tertiary shadow p-3 bg-white rounded">
             <div class="container-fluid">
@@ -84,7 +87,11 @@
                         </h5>
 
                         <h5 class="h1 text-center">
+<<<<<<< HEAD
                         155
+=======
+                            110
+>>>>>>> ebc403614ce0e0db6107934eb7e275e7b86644e0
                         </h5>
                     </div>
                 </div>
@@ -98,7 +105,11 @@
                         </h5>
 
                         <h5 class="h1 text-center">
+<<<<<<< HEAD
                         <?php echo $count_theloai; ?>
+=======
+                            10
+>>>>>>> ebc403614ce0e0db6107934eb7e275e7b86644e0
                         </h5>
                     </div>
                 </div>
@@ -112,7 +123,11 @@
                         </h5>
 
                         <h5 class="h1 text-center">
+<<<<<<< HEAD
                         <?php echo $count_tacgia; ?>
+=======
+                            20
+>>>>>>> ebc403614ce0e0db6107934eb7e275e7b86644e0
                         </h5>
                     </div>
                 </div>
@@ -126,7 +141,11 @@
                         </h5>
 
                         <h5 class="h1 text-center">
+<<<<<<< HEAD
                         <?php echo $count_baiviet; ?>
+=======
+                            110
+>>>>>>> ebc403614ce0e0db6107934eb7e275e7b86644e0
                         </h5>
                     </div>
                 </div>

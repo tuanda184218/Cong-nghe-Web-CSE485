@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php
     include '../includes/database-connection.php';
     
@@ -16,6 +17,8 @@
     echo "Không có thể loại nào.";
 }
 ?>
+=======
+>>>>>>> ebc403614ce0e0db6107934eb7e275e7b86644e0
 <!DOCTYPE html>
 <html lang="en">
 <head>
