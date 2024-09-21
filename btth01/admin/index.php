@@ -10,9 +10,9 @@
     <link rel="stylesheet" href="css/style_login.css">
 </head>
 <body>
-
 <?php
-    include '../includes/database-connection.php';
+    include '../includes/database-connection.php'; // Kết nối CSDL
+
     // Đếm số lượng thể loại
     $sql_theloai = "SELECT COUNT(ma_tloai) AS count_theloai FROM theloai";
     $result_theloai = $conn->query($sql_theloai);
@@ -28,10 +28,11 @@
     $result_baiviet = $conn->query($sql_baiviet);
     $count_baiviet = $result_baiviet->fetch_assoc()['count_baiviet'];
 
-    // Đếm số lượng người dùng (Giả sử bạn có bảng 'users')
+    // // Đếm số lượng người dùng (Giả sử bạn có bảng 'users')
     // $sql_users = "SELECT COUNT(id) AS count_users FROM users";
     // $result_users = $conn->query($sql_users);
     // $count_users = $result_users->fetch_assoc()['count_users'];
+
 ?>
 
 <!-- Hiển thị thông tin thống kê trên trang -->
@@ -39,8 +40,8 @@
     <p>Số lượng thể loại: <?php echo $count_theloai; ?></p>
     <p>Số lượng tác giả: <?php echo $count_tacgia; ?></p>
     <p>Số lượng bài viết: <?php echo $count_baiviet; ?></p>
-   
-</div>  -->
+    <p>Số lượng người dùng: <?php echo $count_users; ?></p>
+</div> -->
     <header>
         <nav class="navbar navbar-expand-lg bg-body-tertiary shadow p-3 bg-white rounded">
             <div class="container-fluid">
