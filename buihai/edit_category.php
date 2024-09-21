@@ -1,5 +1,5 @@
 <?php
-    include "../db.php";
+    include "../includes/database-connection.php";
     $sql = "SELECT * FROM theloai where ma_tloai = {$_GET['id']}";
     $stament = $conn->query($sql);
     $result = $stament->fetch_assoc(); 
