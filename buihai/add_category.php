@@ -55,8 +55,6 @@
                         <input type="text" class="form-control" name="txtCatName">
                     </div>
 
-                    <!-- <input type="hidden" name="csrf_token" value="<?php //echo $_SESSION['csrf_token']; ?>"> -->
-
                     <div class="form-group  float-end ">
                         <input name = "btnAdd" type="submit" value="Thêm" class="btn btn-success">
                         <a href="category.php" class="btn btn-warning ">Quay lại</a>
