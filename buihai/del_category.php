@@ -1,5 +1,5 @@
 <?php
-require '../db.php';
+require '../includes/database-connection.php';
 if (isset($_GET['id'])) {
 
     $ma_tgia = $_GET['id'];
