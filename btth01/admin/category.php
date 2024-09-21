@@ -16,6 +16,7 @@
     echo "Không có thể loại nào.";
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
