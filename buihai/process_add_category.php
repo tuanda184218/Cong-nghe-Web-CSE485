@@ -1,5 +1,5 @@
 <?php
-    include "../db.php"; //Kết nối cơ sở dữ liệu
+    include "../includes/database-connection.php"; //Kết nối cơ sở dữ liệu
 
     if(isset($_POST['btnAdd'])){ //Kiểm tra xem POST được gửi lên không
 
