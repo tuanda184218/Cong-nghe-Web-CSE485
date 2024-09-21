@@ -4,23 +4,25 @@ use BTTH01_CSE485;
 
 CREATE TABLE tacgia (
     ma_tgia INT NOT NULL PRIMARY KEY,
-    ten_tgia VARCHAR(100) NOT NULL,
-    hinh_tgia VARCHAR(100));
+    ten_tgia NVARCHAR(100) NOT NULL,
+    hinh_tgia NVARCHAR(100)
+);
 
 CREATE TABLE theloai (
     ma_tloai INT NOT NULL PRIMARY KEY,
-    ten_tloai VARCHAR(50) NOT NULL);
+    ten_tloai NVARCHAR(50) NOT NULL
+);
 
 CREATE TABLE baiviet (
     ma_bviet INT NOT NULL,
-    tieude VARCHAR(200) NOT NULL,
-    ten_bhat VARCHAR(100) NOT NULL,
+    tieude NVARCHAR(200) NOT NULL,
+    ten_bhat NVARCHAR(100) NOT NULL,
     ma_tloai INT NOT NULL,
     tomtat TEXT NOT NULL,
     noidung TEXT,
     ma_tgia INT NOT NULL,
     ngayviet DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    hinhanh VARCHAR(200),
+    hinhanh NVARCHAR(200),
     PRIMARY KEY (ma_bviet),
     FOREIGN KEY (ma_tloai) REFERENCES theloai(ma_tloai),
     FOREIGN KEY (ma_tgia) REFERENCES tacgia(ma_tgia)

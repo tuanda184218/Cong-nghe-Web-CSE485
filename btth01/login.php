@@ -1,3 +1,38 @@
+<?php
+    include "./includes/database-connection.php";
+
+    // Lấy dữ liệu từ form 
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        // Lấy thông tin từ form
+        $username = $_POST['username'];
+        $password = $_POST['password'];
+
+        // Truy vấn để tìm user theo username
+        $sql = "SELECT * FROM users WHERE username = ?";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param("s", $username);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        if ($result->num_rows > 0) {
+            $user = $result->fetch_assoc();
+            // So sánh mật khẩu (đã được mã hóa)
+            if (password_verify($password, $user['password'])) {
+                // Đăng nhập thành công, chuyển hướng đến trang admin
+                header("Location: admin.php");
+                exit();
+            } else {
+                echo "<script>alert('Sai mật khẩu!');</script>";
+            }
+        } else {
+            echo "<script>alert('Không tìm thấy người dùng!');</script>";
+        }
+
+        $stmt->close();
+    }   
+?>
+<!-- Can sua chua xong -->
+<!-- Login form -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -37,8 +72,9 @@
                 </div>
             </div>
         </nav>
-
     </header>
+
+
     <main class="container mt-5 mb-5">
         <!-- <h3 class="text-center text-uppercase mb-3 text-primary">CẢM NHẬN VỀ BÀI HÁT</h3> -->
         <div class="d-flex justify-content-center h-100">
@@ -52,15 +88,16 @@
                         </div>
                     </div>
                     <div class="card-body">
-                        <form>
+                        <!---------------------- Need to modify here ------------------------------->
+                        <form method="$_POST" action="login.php">
                             <div class="input-group mb-3">
                                 <span class="input-group-text" id="txtUser"><i class="fas fa-user"></i></span>
-                                <input type="text" class="form-control" placeholder="username" >
+                                <input type="text" name="username" class="form-control" placeholder="username" >
                             </div>
 
                             <div class="input-group mb-3">
                                 <span class="input-group-text" id="txtPass"><i class="fas fa-key"></i></span>
-                                <input type="text" class="form-control" placeholder="password" >
+                                <input type="text" name="password" class="form-control" placeholder="password" >
                             </div>
                             
                             <div class="row align-items-center remember">
@@ -70,6 +107,7 @@
                                 <input type="submit" value="Login" class="btn float-end login_btn">
                             </div>
                         </form>
+
                     </div>
                     <div class="card-footer">
                         <div class="d-flex justify-content-center ">
@@ -83,6 +121,7 @@
 
         </div>
     </main>
+
     <footer class="bg-white d-flex justify-content-center align-items-center border-top border-secondary  border-2" style="height:80px">
         <h4 class="text-center text-uppercase fw-bold">TLU's music garden</h4>
     </footer>
